@@ -29,15 +29,10 @@ public class UserBook {
         public Thread b;
 
 
-        public BookingThread(Booking booking, String msg) {
+        public BookingThread(String msg, Booking booking, Thread b) {
             this.msg = msg;
             this.booking = booking;
-            this.b = new Thread();
-            this.b.start();
-
-        }
-
-        public BookingThread(Booking booking, String msg) {
+            this.b = b;
         }
 
         @Override

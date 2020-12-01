@@ -1,20 +1,11 @@
-package com.java.automation.lab.fall.kapinus.core22.dao.service;
+package com.java.automation.lab.fall.kapinus.core22.service;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
-import com.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
-import com.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
-import com.automation.lab.fall.kapinus.core22.dao.impl.xml.*;
-import com.automation.lab.fall.kapinus.core22.domain.*;
 import com.java.automation.lab.fall.kapinus.core22.io.PropertyReader;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.xml.*;
 import com.java.automation.lab.fall.kapinus.core22.domain.*;
-
-import java.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
-import java.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
-import java.automation.lab.fall.kapinus.core22.dao.impl.xml.*;
-import java.automation.lab.fall.kapinus.core22.domain.*;
 import java.util.Map;
 
 public class BaseService {

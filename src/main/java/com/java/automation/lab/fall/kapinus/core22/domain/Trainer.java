@@ -21,22 +21,11 @@ public class Trainer implements Serializable{
     private TrainerSpecialization trainerSpecialization;
     private int [][] schedule ;
 
-    public Trainer(String name, int age, TrainerSpecialization trainerSpecialization, int [][] schedule)
-            throws AgeTrainerException, InvalidScheduleException {
-        if(age < 18){
-            throw new AgeTrainerException();
-        }
-
-        if(schedule == null){
-            throw new InvalidScheduleException();
-        }
+    public Trainer(String name, int age, TrainerSpecialization trainerSpecialization, int[][] schedule) {
         this.name = name;
         this.age = age;
         this.trainerSpecialization = trainerSpecialization;
         this.schedule = schedule;
-    }
-
-    public Trainer(String name, int age, TrainerSpecialization gym, int[][] schedule) {
     }
 
     public String getName() {

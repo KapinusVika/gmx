@@ -1,4 +1,4 @@
-package com.java.automation.lab.fall.kapinus.core22.dao.service;
+package com.java.automation.lab.fall.kapinus.core22.service;
 
 
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
