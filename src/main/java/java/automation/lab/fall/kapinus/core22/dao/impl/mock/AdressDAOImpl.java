@@ -6,8 +6,7 @@ import java.automation.lab.fall.kapinus.core22.exceptions.NotImplementetExc;
 import java.util.List;
 
 public class AdressDAOImpl implements DAO<Adress> {
-
-    private static AdressDAOImpl instance;
+j    private static AdressDAOImpl instance;
 
     public static synchronized AdressDAOImpl getInstance() {
         if(instance == null){
