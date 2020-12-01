@@ -1,0 +1,2 @@
+# choose between MOCK, OBJ, SQL, XML
+env=XML
