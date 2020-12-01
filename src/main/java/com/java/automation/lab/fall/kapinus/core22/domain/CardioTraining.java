@@ -1,7 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
 
-public class CardioTraining extends Training {
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
+
+@XmlRootElement(name = "CardioTraining")
+@XmlType(propOrder = { "equipment", "duration"})
+public class CardioTraining extends Training implements Serializable {
     private CardioEquipment equipment;
     private double duration;
 

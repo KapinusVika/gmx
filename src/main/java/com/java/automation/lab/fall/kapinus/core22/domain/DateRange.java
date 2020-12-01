@@ -1,8 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 
-public class DateRange {
+@XmlRootElement(name = "DateRange")
+@XmlType(propOrder = { "dateStart", "dateEnd"})
+public class DateRange implements Serializable {
     private OffsetDateTime dateStart;
     private OffsetDateTime dateEnd;
 

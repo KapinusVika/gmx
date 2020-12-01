@@ -1,7 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
 
-public class PowerTraining extends Training{
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
+
+@XmlRootElement(name = "PowerTraining")
+@XmlType(propOrder = { "equipment", "workingWeight"})
+public class PowerTraining extends Training implements Serializable {
     private PowerEquipment equipment;
     private double workingWeight;
 

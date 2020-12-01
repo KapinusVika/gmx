@@ -1,8 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.util.EnumSet;
 
-public class Schedule {
+@XmlRootElement(name = "Schedule")
+@XmlType(propOrder = { "weekendDay"})
+public class Schedule implements Serializable {
     private EnumSet weekendDay;
 
     public Schedule(EnumSet weekendDay){

@@ -1,8 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.util.Objects;
 
-public abstract class Equipment {
+@XmlRootElement(name = "Equipment")
+@XmlType(propOrder = { "descriptionEquipment"})
+public abstract class Equipment implements Serializable {
     private DescriptionEquipment descriptionEquipment;
 
     public Equipment(DescriptionEquipment descriptionEquipment){

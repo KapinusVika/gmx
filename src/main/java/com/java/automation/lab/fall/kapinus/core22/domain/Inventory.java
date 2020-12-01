@@ -1,9 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-
-public class Inventory {
+@XmlRootElement(name = "Inventory")
+@XmlType(propOrder = { "listCardioEq", "listPowerEq"})
+public class Inventory implements Serializable {
     private int inventoryNum;
     private Map<Integer, CardioEquipment> listCardioEq;
     private Map<Integer, PowerEquipment> listPowerEq;

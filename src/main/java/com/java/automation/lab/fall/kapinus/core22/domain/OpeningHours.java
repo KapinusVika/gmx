@@ -1,6 +1,12 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
-public class OpeningHours {
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
+
+@XmlRootElement(name = "OpeningHours")
+@XmlType(propOrder = { "open", "close"})
+public class OpeningHours implements Serializable {
     double open;
     double close;
 

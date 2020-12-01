@@ -1,8 +1,13 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
 import java.util.List;
 
-public class Employees {
+@XmlRootElement(name = "Employees")
+@XmlType(propOrder = { "allTrainers", "administrators", "cleaners"})
+public class Employees implements Serializable {
     private List<Trainer> allTrainers;
     private List<String> administrators;
     private List<String> cleaners;

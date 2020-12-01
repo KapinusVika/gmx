@@ -2,7 +2,13 @@ package com.java.automation.lab.fall.kapinus.core22.domain;
 
 import com.java.automation.lab.fall.kapinus.core22.util.thread.Booking;
 
-public class UserBook {
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+import java.io.Serializable;
+
+@XmlRootElement(name = "UserBook")
+@XmlType(propOrder = { "day", "hour"})
+public class UserBook implements Serializable {
     int day;
     int hour;
 
