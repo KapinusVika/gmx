@@ -24,7 +24,7 @@ public class BaseService {
             "MOCK", new CardioEquipmentDAOImpl(),
             "OBJ", new CardioEquipmentDAOImplClas(),
             "XML", new CardioEquipmentDAOImplXml(),
-            "JSON", new CardioEquipmentDAOImpl()
+            "JSON", new CardioEquipmentDAOImplJson()
     );
 
     protected static final Map<String, DAO<Client>> CLIENT_DAOS = Map.of(
