@@ -1,6 +1,7 @@
 package com.java.automation.lab.fall.kapinus.core22.service;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
+import com.java.automation.lab.fall.kapinus.core22.dao.impl.json.*;
 import com.java.automation.lab.fall.kapinus.core22.io.PropertyReader;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
@@ -23,7 +24,7 @@ public class BaseService {
             "MOCK", new CardioEquipmentDAOImpl(),
             "OBJ", new CardioEquipmentDAOImplClas(),
             "XML", new CardioEquipmentDAOImplXml(),
-            "JSON", new CardioEquipmentDAOImplJson()
+            "JSON", new CardioEquipmentDAOImpl()
     );
 
     protected static final Map<String, DAO<Client>> CLIENT_DAOS = Map.of(
