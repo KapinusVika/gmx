@@ -1,7 +1,6 @@
 package com.java.automation.lab.fall.kapinus.core22.service;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
-import com.java.automation.lab.fall.kapinus.core22.dao.impl.json.*;
 import com.java.automation.lab.fall.kapinus.core22.io.PropertyReader;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
@@ -16,100 +15,86 @@ public class BaseService {
     protected static final Map<String, DAO<Adress>> ADRESS_DAOS = Map.of(
             "MOCK", new AdressDAOImpl(),
             "OBJ", new AdressDAOImplClas(),
-            "XML", new AdressDAOImplXml(),
-            "Json", new AdressDAOImplJson()
+            "XML", new AdressDAOImplXml()
     );
 
     protected static final Map<String, DAO<CardioEquipment>> CARDIO_EQUIPMENT_DAOS = Map.of(
             "MOCK", new CardioEquipmentDAOImpl(),
             "OBJ", new CardioEquipmentDAOImplClas(),
-            "XML", new CardioEquipmentDAOImplXml(),
-            "Json", new CardioEquipmentDAOImplJson()
+            "XML", new CardioEquipmentDAOImplXml()
     );
 
     protected static final Map<String, DAO<Client>> CLIENT_DAOS = Map.of(
             "MOCK", new ClientDAOImpl(),
             "OBJ", new ClientDAOImplClas(),
-            "XML", new ClientDAOImplXml(),
-            "Json", new ClientDAOImplJson()
+            "XML", new ClientDAOImplXml()
     );
 
     protected static final Map<String, DAO<Contact>> CONTACT_DAOS = Map.of(
             "MOCK", new ContactDAOImpl(),
             "OBJ", new ContactDAOImplClas(),
-            "XML", new ContactDAOImplXml(),
-            "Json", new ContactDAOImplJson()
+            "XML", new ContactDAOImplXml()
     );
 
     protected static final Map<String, DAO<DescriptionEquipment>> DESCRIPTION_EQUIPMENT_DAOS = Map.of(
             "MOCK", new DescriptionEquipmentDAOImpl(),
             "OBJ", new DescriptionEquipmentDAOImplClas(),
-            "XML", new DescriptionEquipmentDAOImplXml(),
-            "Json", new DescriptionEquipmentDAOImplJson()
+            "XML", new DescriptionEquipmentDAOImplXml()
     );
 
     protected static final Map<String, DAO<GroupTraining>> GROUP_TRAINING_DAOS = Map.of(
             "MOCK", new GroupTrainingDAOImpl(),
             "OBJ", new GroupTrainingDAOImplClas(),
-            "XML", new GroupTrainingDAOImplXml(),
-            "Json", new GroupTrainingDAOImplJson()
+            "XML", new GroupTrainingDAOImplXml()
 
     );
 
     protected static final Map<String, DAO<NutritionFacts>> NUTRITION_FACTS_DAOS = Map.of(
             "MOCK", new NutritionFactsDAOImpl(),
             "OBJ", new NutritionFactsDAOImplClas(),
-            "XML", new NutritionFactsDAOImplXml(),
-            "Json", new NutritionFactsDAOImplJson()
+            "XML", new NutritionFactsDAOImplXml()
     );
 
     protected static final Map<String, DAO<NutritionProgram>> NUTRITION_PROGRAM_DAOS = Map.of(
             "MOCK", new NutritionProgramDAOImpl(),
             "OBJ", new NutritionProgramDAOImplClas(),
-            "XML", new NutritionProgramDAOImplXml(),
-            "Json", new NutritionProgramDAOImplJson()
+            "XML", new NutritionProgramDAOImplXml()
     );
 
     protected static final Map<String, DAO<PowerEquipment>> POWER_EQUIPMENT_DAOS = Map.of(
             "MOCK", new PowerEquipmentDAOImpl(),
             "OBJ", new PowerEquipmentDAOImplClas(),
-            "XML", new PowerEquipmentDAOImplXml(),
-            "Json", new PowerEquipmentDAOImplJson()
+            "XML", new PowerEquipmentDAOImplXml()
     );
 
     protected static final Map<String, DAO<PricePlan>> PRICE_PLAN_DAOS = Map.of(
             "MOCK", new PricePlanDAOImpl(),
             "OBJ", new PricePlanDAOImplClas(),
-            "XML", new PricePlanDAOImplXml(),
-            "Json", new PricePlanDAOImplJson()
+            "XML", new PricePlanDAOImplXml()
     );
 
     protected static final Map<String, DAO<Subscription>> SUBSCRIPTION_DAOS = Map.of(
             "MOCK", new SubscriptionDAOImpl(),
             "OBJ", new SubscriptionDAOImplClas(),
-            "XML", new SubscriptionDAOImplXml(),
-            "Json", new SubscriptionDAOImplJson()
+            "XML", new SubscriptionDAOImplXml()
     );
 
     protected static final Map<String, DAO<Trainer>> TRAINER_DAOS = Map.of(
             "MOCK", new TrainerDAOImpl(),
             "OBJ", new TrainerDAOImplClas(),
-            "XML", new TrainerDAOImplXml(),
-            "Json", new TrainerDAOImplJson()
+            "XML", new TrainerDAOImplXml()
     );
 
     protected static final Map<String, DAO<TrainingProgram>> TRAINING_PROGRAM_DAOS = Map.of(
             "MOCK", new TrainingProgramDAOImpl(),
             "OBJ", new TrainingProgramDAOImplClas(),
-            "XML", new TrainingProgramDAOImplXml(),
-            "Json", new TrainingProgramDAOImplJson()
+            "XML", new TrainingProgramDAOImplXml()
     );
 
     protected static final Map<String, DAO<Training>> TRAINING_DAOS = Map.of(
             "MOCK", new TrainingDAOImpl(),
             "OBJ", new TrainingDAOImplClas(),
-            "XML", new TrainingDAOImplXml(),
-            "Json", new TrainingDAOImplJson()
+            "XML", new TrainingDAOImplXml()
     );
 
 }
