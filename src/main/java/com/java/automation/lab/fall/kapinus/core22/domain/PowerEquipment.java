@@ -68,6 +68,6 @@ public class PowerEquipment extends Equipment implements Serializable, Comparabl
 
     @Override
     public int compareTo(PowerEquipment o) {
-        return (int) (maxWorkingWeight - o.getMaxWorkingWeight());
+        return (int) (this.getMaxWorkingWeight() - o.getMaxWorkingWeight());
     }
 }

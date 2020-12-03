@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "PricePlan")
 @XmlType(propOrder = { "name", "nameDiscount", "discount", "validity"})
-public class PricePlan extends AbstractModel implements Serializable{
+public class PricePlan extends AbstractModel implements Serializable, Comparable<PricePlan>{
     private Price name;
     private Discount nameDiscount;
     private int discount;
@@ -88,6 +88,11 @@ public class PricePlan extends AbstractModel implements Serializable{
     @Override
     public int hashCode() {
         return discount + name.hashCode()  + 107;
+    }
+
+    @Override
+    public int compareTo(PricePlan o) {
+        return this.getDiscount() - o.getDiscount();
     }
 }
 

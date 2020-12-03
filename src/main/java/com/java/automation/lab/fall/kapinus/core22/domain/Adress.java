@@ -85,7 +85,7 @@ public class Adress extends AbstractModel implements Serializable, Comparable<Ad
 
     @Override
     public int compareTo(Adress o) {
-        return street.length() - o.getStreet().length();
+        return this.getStreet().length() - o.getStreet().length();
     }
 }
 

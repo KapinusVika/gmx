@@ -58,6 +58,6 @@ public class PowerTraining extends Training implements Serializable, Comparable<
 
     @Override
     public int compareTo(PowerTraining o) {
-        return (int) (workingWeight - o.getWorkingWeight());
+        return (int) (this.getWorkingWeight() - o.getWorkingWeight());
     }
 }

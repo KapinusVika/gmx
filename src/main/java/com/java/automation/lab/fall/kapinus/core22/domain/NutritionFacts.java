@@ -92,6 +92,6 @@ public class NutritionFacts extends AbstractModel implements Serializable, Compa
 
     @Override
     public int compareTo(NutritionFacts o) {
-        return (int) (caloriesPerDay - o.getCaloriesPerDay());
+        return (int) (this.getCaloriesPerDay() - o.getCaloriesPerDay());
     }
 }

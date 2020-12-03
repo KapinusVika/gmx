@@ -82,6 +82,6 @@ public class DescriptionEquipment extends AbstractModel implements Serializable,
 
     @Override
     public int compareTo(DescriptionEquipment o) {
-        return year - o.getYear();
+        return this.getYear() - o.getYear();
     }
 }

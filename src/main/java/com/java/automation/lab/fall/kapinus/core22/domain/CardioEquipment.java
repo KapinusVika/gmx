@@ -53,6 +53,6 @@ public class CardioEquipment extends Equipment implements Serializable, Comparab
 
     @Override
     public int compareTo(CardioEquipment o) {
-        return (int) (maxWeight - o.getMaxWeight());
+        return (int) (this.getMaxWeight() - o.getMaxWeight());
     }
 }
