@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "PowerTraining")
 @XmlType(propOrder = { "equipment", "workingWeight"})
-public class PowerTraining extends Training implements Serializable {
+public class PowerTraining extends Training implements Serializable, Comparable<PowerTraining> {
     private PowerEquipment equipment;
     private double workingWeight;
 
@@ -56,4 +56,8 @@ public class PowerTraining extends Training implements Serializable {
         return (wW.hashCode() * 5) + 97;
     }
 
+    @Override
+    public int compareTo(PowerTraining o) {
+        return (int) (workingWeight - o.getWorkingWeight());
+    }
 }

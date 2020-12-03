@@ -5,6 +5,7 @@ import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+
 @XmlRootElement(name = "Inventory")
 @XmlType(propOrder = { "listCardioEq", "listPowerEq"})
 public class Inventory implements Serializable {

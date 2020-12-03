@@ -2,15 +2,13 @@ package com.java.automation.lab.fall.kapinus.core22.domain;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidCaloriesException;
 import java.io.Serializable;
 
-
 @XmlRootElement(name = "NutritionFacts")
 @XmlType(propOrder = { "caloriesPerDay", "proteinPerDay", "carbohydratesPerDay", "fatsPerDay"})
-public class NutritionFacts extends AbstractModel implements Serializable{
+public class NutritionFacts extends AbstractModel implements Serializable, Comparable<NutritionFacts>{
     private double caloriesPerDay;
     private double proteinPerDay;
     private double carbohydratesPerDay;
@@ -90,5 +88,10 @@ public class NutritionFacts extends AbstractModel implements Serializable{
         String cPd = Double.toString(caloriesPerDay);
         String pPd = Double.toString(proteinPerDay);
         return (pPd.hashCode() + cPd.hashCode()) * 3;
+    }
+
+    @Override
+    public int compareTo(NutritionFacts o) {
+        return (int) (caloriesPerDay - o.getCaloriesPerDay());
     }
 }

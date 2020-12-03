@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "DescriptionEquipment")
 @XmlType(propOrder = { "name", "weight", "madeIn", "year"})
-public class DescriptionEquipment extends AbstractModel implements Serializable {
+public class DescriptionEquipment extends AbstractModel implements Serializable, Comparable<DescriptionEquipment>{
     private String name;
     private int weight;
     private String madeIn;
@@ -78,5 +78,10 @@ public class DescriptionEquipment extends AbstractModel implements Serializable 
     @Override
     public int hashCode() {
         return Objects.hash(name, weight, madeIn, year);
+    }
+
+    @Override
+    public int compareTo(DescriptionEquipment o) {
+        return year - o.getYear();
     }
 }

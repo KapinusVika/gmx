@@ -9,7 +9,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "Training")
 @XmlType(propOrder = { "name", "trainer", "client"})
-public class Training extends AbstractModel implements Serializable {
+public abstract class Training extends AbstractModel implements Serializable {
     private String name;
     private Trainer trainer;
     private Client client;

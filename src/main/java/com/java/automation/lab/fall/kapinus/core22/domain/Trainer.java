@@ -4,11 +4,9 @@ import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractMod
 import com.java.automation.lab.fall.kapinus.core22.enums.TrainerSpecialization;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.AgeTrainerException;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidScheduleException;
-
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Objects;
-
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 

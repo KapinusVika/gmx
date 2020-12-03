@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "CardioEquipment")
 @XmlType(propOrder = { "maxWeight"})
-public class CardioEquipment extends Equipment implements Serializable{
+public class CardioEquipment extends Equipment implements Serializable, Comparable<CardioEquipment>{
     private double maxWeight;
 
     public CardioEquipment(DescriptionEquipment descriptionEquipment, double maxWeight){
@@ -49,5 +49,10 @@ public class CardioEquipment extends Equipment implements Serializable{
     @Override
     public int hashCode() {
         return Objects.hash(super.hashCode(), maxWeight);
+    }
+
+    @Override
+    public int compareTo(CardioEquipment o) {
+        return (int) (maxWeight - o.getMaxWeight());
     }
 }

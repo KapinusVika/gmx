@@ -2,12 +2,9 @@ package com.java.automation.lab.fall.kapinus.core22.domain;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.enums.AgeGroups;
-
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-
 import com.java.automation.lab.fall.kapinus.core22.exceptions.AgeClientException;
-
 import java.io.Serializable;
 import java.util.Objects;
 
