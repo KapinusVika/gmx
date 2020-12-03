@@ -1,12 +1,14 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
 @XmlRootElement(name = "Subscription")
 @XmlType(propOrder = { "name", "adress", "contact", "schedule", "openingHours", "price", "training"})
-public class Subscription implements Serializable {
+public class Subscription extends AbstractModel implements Serializable {
     private String name;
     private Adress adress;
     private Contact contact;

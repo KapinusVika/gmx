@@ -1,8 +1,6 @@
 package com.java.automation.lab.fall.kapinus.core22.util.thread;
 
 
-import com.java.automation.lab.fall.kapinus.core22.domain.UserBook;
-
 public class Booking {
 
     public synchronized void book(String msg) {

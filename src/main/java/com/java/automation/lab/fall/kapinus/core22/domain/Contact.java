@@ -1,5 +1,7 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.net.URL;
@@ -7,7 +9,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "Contact")
 @XmlType(propOrder = { "phoneNumber", "instagramAcc"})
-public class Contact implements Serializable{
+public class Contact extends AbstractModel implements Serializable{
     private String phoneNumber;
     private URL instagramAcc;
 

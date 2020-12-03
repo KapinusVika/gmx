@@ -1,4 +1,6 @@
-package com.java.automation.lab.fall.kapinus.core22.domain;
+package com.java.automation.lab.fall.kapinus.core22.util.thread;
+
+import com.java.automation.lab.fall.kapinus.core22.domain.Trainer;
 
 public class Reception {
     public boolean booking(Trainer trainer, UserBook userBook){

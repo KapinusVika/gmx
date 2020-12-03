@@ -1,5 +1,6 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.enums.AgeGroups;
 
 import javax.xml.bind.annotation.XmlRootElement;
@@ -12,7 +13,7 @@ import java.util.Objects;
 
 @XmlRootElement(name = "Client")
 @XmlType(propOrder = { "name", "age", "ageGroups", "subscription", "nutritionProgram", "trainingProgram"})
-public class Client implements Serializable {
+public class Client extends AbstractModel implements Serializable, Comparable<Client> {
     private String name;
     private int age;
     private AgeGroups ageGroups;
@@ -109,6 +110,11 @@ public class Client implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(name, age, ageGroups, subscription, nutritionProgram, trainingProgram);
+    }
+
+    @Override
+    public int compareTo(Client o) {
+        return this.getAge() - o.getAge();
     }
 }
 

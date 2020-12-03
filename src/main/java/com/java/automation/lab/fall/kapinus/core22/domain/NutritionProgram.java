@@ -1,5 +1,7 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
@@ -7,7 +9,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "NutritionProgram")
 @XmlType(propOrder = { "nameDiet", "nutritionFacts", "excludedProducts"})
-public class NutritionProgram implements Serializable{
+public class NutritionProgram extends AbstractModel implements Serializable{
     private String nameDiet;
     private NutritionFacts nutritionFacts;
     private String excludedProducts;

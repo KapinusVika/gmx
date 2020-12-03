@@ -1,5 +1,7 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "GroupTraining")
 @XmlType(propOrder = { "name", "trainer", "clients", "duration"})
-public class GroupTraining implements Serializable {
+public class GroupTraining extends AbstractModel implements Serializable {
     private String name;
     private Trainer trainer;
     private List<Client> clients;

@@ -1,27 +1,34 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.enums.TrainerSpecialization;
-
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
-
 import com.java.automation.lab.fall.kapinus.core22.exceptions.AgeTrainerException;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidScheduleException;
 
 import java.io.Serializable;
-
 import java.util.Arrays;
 import java.util.Objects;
 
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
 @XmlRootElement(name = "Trainer")
 @XmlType(propOrder = { "name", "age", "trainerSpecialization", "schedule"})
-public class Trainer implements Serializable{
+public class Trainer extends AbstractModel implements Serializable, Comparable<Trainer>{
     private String name;
     private int age;
     private TrainerSpecialization trainerSpecialization;
     private int [][] schedule ;
 
-    public Trainer(String name, int age, TrainerSpecialization trainerSpecialization, int[][] schedule) {
+    public Trainer(String name, int age, TrainerSpecialization trainerSpecialization, int[][] schedule)
+            throws AgeTrainerException, InvalidScheduleException {
+        if(age < 18){
+            throw new AgeTrainerException();
+        }
+        if(schedule == null){
+            throw new InvalidScheduleException();
+        }
+
         this.name = name;
         this.age = age;
         this.trainerSpecialization = trainerSpecialization;
@@ -86,5 +93,10 @@ public class Trainer implements Serializable{
         int result = Objects.hash(name, age, trainerSpecialization);
         result = 31 * result + Arrays.hashCode(schedule);
         return result;
+    }
+
+    @Override
+    public int compareTo(Trainer o) {
+        return this.getAge() - o.getAge();
     }
 }

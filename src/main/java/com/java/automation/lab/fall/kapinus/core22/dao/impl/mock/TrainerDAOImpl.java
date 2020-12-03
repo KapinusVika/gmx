@@ -2,6 +2,8 @@ package com.java.automation.lab.fall.kapinus.core22.dao.impl.mock;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.Trainer;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.AgeTrainerException;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidScheduleException;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.NotImplementetExc;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class TrainerDAOImpl implements DAO<Trainer> {
     }
 
     @Override
-    public Trainer create(Trainer trainer) {
+    public Trainer create(Trainer trainer) throws AgeTrainerException, InvalidScheduleException {
         return new Trainer(
                 trainer.getName(),
                 trainer.getAge(),
@@ -40,7 +42,7 @@ public class TrainerDAOImpl implements DAO<Trainer> {
     }
 
     @Override
-    public Trainer update(Trainer trainer) {
+    public Trainer update(Trainer trainer) throws AgeTrainerException, InvalidScheduleException {
         return new Trainer(
                 trainer.getName(),
                 trainer.getAge(),

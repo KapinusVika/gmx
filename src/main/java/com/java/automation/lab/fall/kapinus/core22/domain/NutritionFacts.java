@@ -2,13 +2,15 @@ package com.java.automation.lab.fall.kapinus.core22.domain;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidCaloriesException;
 import java.io.Serializable;
 
 
 @XmlRootElement(name = "NutritionFacts")
 @XmlType(propOrder = { "caloriesPerDay", "proteinPerDay", "carbohydratesPerDay", "fatsPerDay"})
-public class NutritionFacts implements Serializable{
+public class NutritionFacts extends AbstractModel implements Serializable{
     private double caloriesPerDay;
     private double proteinPerDay;
     private double carbohydratesPerDay;

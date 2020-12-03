@@ -1,12 +1,15 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
+
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
+import java.util.concurrent.Callable;
 
 @XmlRootElement(name = "Adress")
 @XmlType(propOrder = { "city", "street", "build", "apt" })
-public class Adress implements Serializable {
+public class Adress extends AbstractModel implements Serializable {
     private String city;
     private String street;
     private int build;
@@ -81,6 +84,7 @@ public class Adress implements Serializable {
     public int hashCode() {
         return (apt + street.hashCode() ) * build;
     }
+
 }
 
 

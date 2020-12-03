@@ -1,6 +1,7 @@
 package com.java.automation.lab.fall.kapinus.core22.domain;
 
 
+import com.java.automation.lab.fall.kapinus.core22.dao.abstractModel.AbstractModel;
 import com.java.automation.lab.fall.kapinus.core22.enums.Discount;
 import com.java.automation.lab.fall.kapinus.core22.enums.Price;
 
@@ -13,7 +14,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "PricePlan")
 @XmlType(propOrder = { "name", "nameDiscount", "discount", "validity"})
-public class PricePlan implements Serializable{
+public class PricePlan extends AbstractModel implements Serializable{
     private Price name;
     private Discount nameDiscount;
     private int discount;
