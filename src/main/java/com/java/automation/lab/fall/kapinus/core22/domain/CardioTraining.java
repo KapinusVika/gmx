@@ -19,6 +19,14 @@ public class CardioTraining extends Training implements Serializable {
 
     }
 
+    public CardioEquipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(CardioEquipment equipment) {
+        this.equipment = equipment;
+    }
+
     public double getDuration() {
         return duration;
     }

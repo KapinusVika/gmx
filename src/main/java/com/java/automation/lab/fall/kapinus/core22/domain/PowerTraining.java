@@ -20,6 +20,14 @@ public class PowerTraining extends Training implements Serializable {
 
     }
 
+    public PowerEquipment getEquipment() {
+        return equipment;
+    }
+
+    public void setEquipment(PowerEquipment equipment) {
+        this.equipment = equipment;
+    }
+
     public double getWorkingWeight() {
         return workingWeight;
     }

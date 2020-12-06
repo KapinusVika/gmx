@@ -2,16 +2,17 @@ package com.java.automation.lab.fall.kapinus.core22.dao.impl.json;
 
 import com.java.automation.lab.fall.kapinus.core22.constant.IOConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
-import com.java.automation.lab.fall.kapinus.core22.domain.DescriptionEquipment;
+import com.java.automation.lab.fall.kapinus.core22.domain.CardioTraining;
 import com.java.automation.lab.fall.kapinus.core22.io.JsonIO;
 
 import java.io.IOException;
 import java.util.List;
 
-public class DescriptionEquipmentDAOImplJson implements DAO<DescriptionEquipment> {
-    public DescriptionEquipment create(DescriptionEquipment o) {
+public class CardioTrainingDAOImplJson implements DAO<CardioTraining> {
+    public CardioTraining create(CardioTraining o) {
         try {
-            new JsonIO<>(DescriptionEquipment.class).write(o, String.format(IOConstant.JSON_OBJ_PATH, o.getClass().getCanonicalName()));
+            new JsonIO<>(CardioTraining.class)
+                    .write(o, String.format(IOConstant.JSON_OBJ_PATH, o.getClass().getCanonicalName()));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -20,10 +21,10 @@ public class DescriptionEquipmentDAOImplJson implements DAO<DescriptionEquipment
     }
 
     @Override
-    public DescriptionEquipment getById(Long id) {
+    public CardioTraining getById(Long id) {
         try {
-            return new JsonIO<>(DescriptionEquipment.class)
-                    .read(String.format(IOConstant.JSON_OBJ_PATH, DescriptionEquipment.class.getCanonicalName()));
+            return new JsonIO<>(CardioTraining.class)
+                    .read(String.format(IOConstant.JSON_OBJ_PATH, CardioTraining.class.getCanonicalName()));
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -31,12 +32,12 @@ public class DescriptionEquipmentDAOImplJson implements DAO<DescriptionEquipment
     }
 
     @Override
-    public List<DescriptionEquipment> get() {
+    public List<CardioTraining> get() {
         return null;
     }
 
     @Override
-    public DescriptionEquipment update(DescriptionEquipment o) {
+    public CardioTraining update(CardioTraining o) {
         return null;
     }
 

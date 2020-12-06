@@ -1,20 +1,18 @@
 package com.java.automation.lab.fall.kapinus.core22.dao.impl.xml;
 
 import com.java.automation.lab.fall.kapinus.core22.constant.IOConstant;
-
-import javax.xml.bind.JAXBException;
-
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
-import com.java.automation.lab.fall.kapinus.core22.domain.DescriptionEquipment;
+import com.java.automation.lab.fall.kapinus.core22.domain.PowerTraining;
 import com.java.automation.lab.fall.kapinus.core22.io.XMLIO;
 
+import javax.xml.bind.JAXBException;
 import java.util.List;
 
-public class DescriptionEquipmentDAOImplXml implements DAO<DescriptionEquipment> {
-    @Override
-    public DescriptionEquipment create(DescriptionEquipment o) {
+public class PowerTrainingDAOImplXml implements DAO<PowerTraining> {
+    public PowerTraining create(PowerTraining o) {
         try {
-            new XMLIO<>(DescriptionEquipment.class).write(o, String.format(IOConstant.XML_OBJ_PATH, o.getClass().getCanonicalName()));
+            new XMLIO<>(PowerTraining.class)
+                    .write(o, String.format(IOConstant.XML_OBJ_PATH, o.getClass().getCanonicalName()));
         } catch (JAXBException e) {
             e.printStackTrace();
             return null;
@@ -23,18 +21,17 @@ public class DescriptionEquipmentDAOImplXml implements DAO<DescriptionEquipment>
     }
 
     @Override
-    public DescriptionEquipment getById(Long id) {
+    public PowerTraining getById(Long id) {
         return null;
     }
 
     @Override
-    public List<DescriptionEquipment> get() {
+    public List<PowerTraining> get() {
         return null;
     }
 
-
     @Override
-    public DescriptionEquipment update(DescriptionEquipment o) {
+    public PowerTraining update(PowerTraining o) {
         return null;
     }
 
