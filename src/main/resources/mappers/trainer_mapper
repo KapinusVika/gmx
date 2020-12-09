@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="trainer_mapper">
+    <select id="getById" resultMap="trainer_map">
+        SELECT *
+        FROM trainers
+        WHERE id=#{id}
+    </select>
+    <select id="get" resultMap="trainer_map">
+        SELECT *
+        FROM trainers
+    </select>
+    <delete id="deleteById">
+        DELETE FROM trainers
+        WHERE id=#{id}
+    </delete>
+    <insert id="create">
+        INSERT INTO trainers(name, age, trainerSpecialization, schedule)
+        VALUES(#{name}, #{age}, #{trainerSpecialization}, #{schedule})
+    </insert>
+    <update id="update">
+        UPDATE trainers
+        SET name=#{name},
+        age=#{age},
+        trainerSpecialization=#{trainerSpecialization},
+        schedule=#{schedule}
+        WHERE id=#{id}
+    </update>
+
+    <resultMap id="trainer_map"
+               type="com.java.automation.lab.fall.kapinus.core22.domain.Trainer"
+               autoMapping="false">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="age" column="age"/>
+        <result property="trainerSpecialization" column="trainerSpecialization"/>
+        <result property="schedule" column="schedule"/>
+    </resultMap>
+</mapper>

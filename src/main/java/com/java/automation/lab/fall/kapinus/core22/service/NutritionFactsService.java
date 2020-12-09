@@ -2,10 +2,9 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
-import java.automation.lab.fall.kapinus.core22.dao.daoModel.NutritionFactsDAO;
 
 import com.java.automation.lab.fall.kapinus.core22.domain.NutritionFacts;
-import com.java.automation.lab.fall.kapinus.core22.exceptions.InvalidCaloriesException;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class NutritionFactsService extends BaseService {
     private static final DAO<NutritionFacts> NUTRITION_FACTS_DAO=
             NUTRITION_FACTS_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
-    public static NutritionFacts createNutritionFacts(NutritionFacts nutritionFacts) throws InvalidCaloriesException {
+    public static NutritionFacts createNutritionFacts(NutritionFacts nutritionFacts) throws InvalidCaloriesException, AgeClientException, InvalidDiscountException, InvalidScheduleException, AgeTrainerException {
         return NUTRITION_FACTS_DAO.create(nutritionFacts);
     }
 
@@ -26,7 +25,7 @@ public class NutritionFactsService extends BaseService {
         return NUTRITION_FACTS_DAO.get();
     }
 
-    public static NutritionFacts update(NutritionFacts nutritionFacts) throws InvalidCaloriesException {
+    public static NutritionFacts update(NutritionFacts nutritionFacts) throws InvalidCaloriesException, AgeClientException, InvalidDiscountException, InvalidScheduleException, AgeTrainerException {
         return NUTRITION_FACTS_DAO.update(nutritionFacts);
     }
 

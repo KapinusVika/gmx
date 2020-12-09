@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="training_mapper">
+    <select id="getById" resultMap="training_map">
+        SELECT *
+        FROM trainings
+        WHERE id=#{id}
+    </select>
+    <select id="get" resultMap="training_map">
+        SELECT *
+        FROM trainings
+    </select>
+    <delete id="deleteById">
+        DELETE FROM trainings
+        WHERE id=#{id}
+    </delete>
+    <insert id="create">
+        INSERT INTO trainings
+    </insert>
+    <update id="update">
+        UPDATE trainings
+        SET
+    </update>
+
+    <resultMap id="training_map"
+               type="com.java.automation.lab.fall.kapinus.core22.domain.Training"
+               autoMapping="false">
+        <id property="id" column="id"/>
+        <result property="city" column="city"/>
+        <result property="street" column="street"/>
+        <result property="build" column="build"/>
+        <result property="apartment" column="apartment"/>
+    </resultMap>
+</mapper>

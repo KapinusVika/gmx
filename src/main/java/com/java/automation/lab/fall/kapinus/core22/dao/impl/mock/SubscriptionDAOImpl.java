@@ -22,8 +22,7 @@ public class SubscriptionDAOImpl implements DAO<Subscription> {
                 subscription.getName(),
                 subscription.getAdress(),
                 subscription.getContact(),
-                subscription.getSchedule(),
-                subscription.getOpeningHours(),
+                subscription.getClient(),
                 subscription.getPricePlan(),
                 subscription.getTraining()
         );
@@ -45,8 +44,7 @@ public class SubscriptionDAOImpl implements DAO<Subscription> {
                 subscription.getName(),
                 subscription.getAdress(),
                 subscription.getContact(),
-                subscription.getSchedule(),
-                subscription.getOpeningHours(),
+                subscription.getClient(),
                 subscription.getPricePlan(),
                 subscription.getTraining()
         );

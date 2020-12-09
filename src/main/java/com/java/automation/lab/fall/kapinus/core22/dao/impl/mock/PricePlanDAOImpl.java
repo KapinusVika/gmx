@@ -22,7 +22,7 @@ public class PricePlanDAOImpl implements DAO<PricePlan> {
                 pricePlan.getName(),
                 pricePlan.getNameDiscount(),
                 pricePlan.getDiscount(),
-                pricePlan.getValidity()
+                pricePlan.getDateRange()
         );
     }
 
@@ -42,7 +42,7 @@ public class PricePlanDAOImpl implements DAO<PricePlan> {
                 pricePlan.getName(),
                 pricePlan.getNameDiscount(),
                 pricePlan.getDiscount(),
-                pricePlan.getValidity()
+                pricePlan.getDateRange()
         );
     }
 

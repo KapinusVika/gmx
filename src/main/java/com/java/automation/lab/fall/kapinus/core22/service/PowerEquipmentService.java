@@ -3,6 +3,7 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.PowerEquipment;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class PowerEquipmentService extends BaseService {
     private static final DAO<PowerEquipment> POWER_EQUIPMENT_DAO =
             POWER_EQUIPMENT_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
-    public static PowerEquipment createPowerEquipment(PowerEquipment powerEquipment){
+    public static PowerEquipment createPowerEquipment(PowerEquipment powerEquipment) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return POWER_EQUIPMENT_DAO.create(powerEquipment);
     }
 
@@ -23,7 +24,7 @@ public class PowerEquipmentService extends BaseService {
         return POWER_EQUIPMENT_DAO.get();
     }
 
-    public static PowerEquipment update(PowerEquipment powerEquipment){
+    public static PowerEquipment update(PowerEquipment powerEquipment) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return POWER_EQUIPMENT_DAO.update(powerEquipment);
     }
 

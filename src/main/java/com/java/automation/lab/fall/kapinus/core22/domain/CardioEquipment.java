@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class CardioEquipment extends Equipment implements Serializable{
     private double maxWeight;
 
-    public CardioEquipment(DescriptionEquipment descriptionEquipment, double maxWeight){
-        super(descriptionEquipment);
+    public CardioEquipment(String name, int year, double maxWeight){
+        super(name, year);
         this.maxWeight = maxWeight;
     }
 

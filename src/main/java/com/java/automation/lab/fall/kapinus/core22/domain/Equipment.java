@@ -8,25 +8,35 @@ import java.util.Objects;
 @XmlRootElement(name = "Equipment")
 @XmlType(propOrder = { "descriptionEquipment"})
 public abstract class Equipment implements Serializable {
-    private DescriptionEquipment descriptionEquipment;
+    String name;
+    private int year;
 
-    public Equipment(DescriptionEquipment descriptionEquipment){
-        this.descriptionEquipment = descriptionEquipment;
+    public Equipment(String name, int year) {
+        this.name = name;
+        this.year = year;
     }
 
-    public DescriptionEquipment getDescriptionEquipment() {
-        return descriptionEquipment;
+    public String getName() {
+        return name;
     }
 
-    public Equipment setDescriptionEquipment(DescriptionEquipment descriptionEquipment) {
-        this.descriptionEquipment = descriptionEquipment;
-        return this;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     @Override
     public String toString() {
         return "Equipment{" +
-                "descriptionEquipment=" + descriptionEquipment +
+                "name='" + name + '\'' +
+                ", year=" + year +
                 '}';
     }
 
@@ -35,13 +45,17 @@ public abstract class Equipment implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Equipment equipment = (Equipment) o;
-        return Objects.equals(descriptionEquipment, equipment.descriptionEquipment);
+        return year == equipment.year &&
+                Objects.equals(name, equipment.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(descriptionEquipment);
+        return Objects.hash(name, year);
     }
 }
+
+
+
 
 

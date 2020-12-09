@@ -3,6 +3,7 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.CardioEquipment;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ public class CardioEquipmentService extends BaseService {
             CARDIO_EQUIPMENT_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
 
-    public static CardioEquipment createCardioEquipment(CardioEquipment cardioEquipment){
+    public static CardioEquipment createCardioEquipment(CardioEquipment cardioEquipment) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return CARDIO_EQUIPMENT_DAO.create(cardioEquipment);
     }
 
@@ -25,7 +26,7 @@ public class CardioEquipmentService extends BaseService {
         return CARDIO_EQUIPMENT_DAO.get();
     }
 
-    public static CardioEquipment update(CardioEquipment cardioEquipment){
+    public static CardioEquipment update(CardioEquipment cardioEquipment) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return CARDIO_EQUIPMENT_DAO.update(cardioEquipment);
     }
 

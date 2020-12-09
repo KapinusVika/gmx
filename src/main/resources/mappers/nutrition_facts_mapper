@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="nutrition_facts_mapper">
+    <select id="getById" resultMap="nutrition_facts_map">
+        SELECT *
+        FROM nutritionFacts
+        WHERE id=#{id}
+    </select>
+    <select id="get" resultMap="nutrition_facts_map">
+        SELECT *
+        FROM nutritionFacts
+    </select>
+    <delete id="deleteById">
+        DELETE FROM nutritionFacts
+        WHERE id=#{id}
+    </delete>
+    <insert id="create">
+        INSERT INTO nutritionFacts(caloriesPerDay, proteinPerDay, carbohydratesPerDay, fatsPerDay)
+        VALUES(#{caloriesPerDay}, #{proteinPerDay}, #{carbohydratesPerDay}, #{fatsPerDay})
+    </insert>
+    <update id="update">
+        UPDATE nutritionFacts
+        SET caloriesPerDay=#{caloriesPerDay},
+        proteinPerDay=#{proteinPerDay},
+        carbohydratesPerDay=#{carbohydratesPerDay},
+        fatsPerDay=#{fatsPerDay}
+        WHERE id=#{id}
+    </update>
+
+    <resultMap id="nutrition_facts_map"
+               type="com.java.automation.lab.fall.kapinus.core22.domain.NutritionFacts"
+               autoMapping="false">
+        <id property="id" column="id"/>
+        <result property="caloriesPerDay" column="caloriesPerDay"/>
+        <result property="proteinPerDay" column="proteinPerDay"/>
+        <result property="carbohydratesPerDay" column="carbohydratesPerDay"/>
+        <result property="fatsPerDay" column="fatsPerDay"/>
+    </resultMap>
+</mapper>

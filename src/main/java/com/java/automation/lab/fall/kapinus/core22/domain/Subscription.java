@@ -5,23 +5,21 @@ import javax.xml.bind.annotation.XmlType;
 import java.io.Serializable;
 
 @XmlRootElement(name = "Subscription")
-@XmlType(propOrder = { "name", "adress", "contact", "schedule", "openingHours", "price", "training"})
+@XmlType(propOrder = { "name", "adress", "contact", "client", "price", "training"})
 public class Subscription implements Serializable {
     private String name;
     private Adress adress;
     private Contact contact;
-    private Schedule schedule;
-    private OpeningHours openingHours;
+    private Client client;
     private PricePlan price;
     private Training training;
 
-    public Subscription(String name, Adress adress, Contact contact, Schedule schedule, OpeningHours openingHours,
+    public Subscription(String name, Adress adress, Contact contact, Client client,
                         PricePlan price, Training training){
         this.name = name;
         this.adress = adress;
         this.contact = contact;
-        this.schedule = schedule;
-        this.openingHours = openingHours;
+        this.client = client;
         this.price = price;
         this.training = training;
     }
@@ -50,20 +48,12 @@ public class Subscription implements Serializable {
         this.contact = contact;
     }
 
-    public Schedule getSchedule(){
-        return schedule;
+    public Client getClient() {
+        return client;
     }
 
-    public void setSchedule(Schedule schedule){
-        this.schedule = schedule;
-    }
-
-    public OpeningHours getOpeningHours(){
-        return openingHours;
-    }
-
-    public void setOpeningHours(OpeningHours openingHours){
-        this.openingHours = openingHours;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public PricePlan getPricePlan(){
@@ -88,8 +78,7 @@ public class Subscription implements Serializable {
         return "Subscription {\n\tname:" + name +
                 "\n\tadress:" + adress +
                 "\n\tcontact:" + contact +
-                "\n\tschedule:" + schedule +
-                "\n\topeningHours:" + openingHours +
+                "\n\tclient:" + client +
                 "\n\tprice:" + price +
                 "\n\ttraining:" + training +
                 "\n}";
@@ -109,8 +98,7 @@ public class Subscription implements Serializable {
         return  name.equals(((Subscription)that).name) &&
                 adress.equals(((Subscription)that).adress) &&
                 contact.equals(((Subscription)that).contact) &&
-                schedule.equals(((Subscription)that).schedule) &&
-                openingHours.equals(((Subscription)that).openingHours) &&
+                client.equals(((Subscription)that).client) &&
                 price.equals(((Subscription)that).price) &&
                 training.equals(((Subscription)that).training);
     }

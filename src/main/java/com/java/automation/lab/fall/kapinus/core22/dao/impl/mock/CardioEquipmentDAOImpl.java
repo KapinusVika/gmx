@@ -19,7 +19,8 @@ public class CardioEquipmentDAOImpl implements DAO<CardioEquipment> {
     @Override
     public CardioEquipment create(CardioEquipment o) {
         return new CardioEquipment(
-                o.getDescriptionEquipment(),
+                o.getName(),
+                o.getYear(),
                 o.getMaxWeight()
         );
     }
@@ -37,7 +38,8 @@ public class CardioEquipmentDAOImpl implements DAO<CardioEquipment> {
     @Override
     public CardioEquipment update(CardioEquipment o) {
         return new CardioEquipment(
-                o.getDescriptionEquipment(),
+                o.getName(),
+                o.getYear(),
                 o.getMaxWeight()
         );
     }

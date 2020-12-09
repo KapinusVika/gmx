@@ -27,8 +27,8 @@ public class ClientDAOImpl implements DAO<Client> {
         return new Client(
                 client.getName(),
                 client.getAge(),
+                client.getContact(),
                 client.getAgeGroups(),
-                client.getSubscription(),
                 client.getNutritionProgram(),
                 client.getTrainingProgram());
     }
@@ -48,8 +48,8 @@ public class ClientDAOImpl implements DAO<Client> {
         return new Client(
                 client.getName(),
                 client.getAge(),
+                client.getContact(),
                 client.getAgeGroups(),
-                client.getSubscription(),
                 client.getNutritionProgram(),
                 client.getTrainingProgram());
     }

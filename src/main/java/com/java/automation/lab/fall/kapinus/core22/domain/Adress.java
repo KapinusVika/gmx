@@ -10,13 +10,13 @@ public class Adress implements Serializable {
     private String city;
     private String street;
     private int build;
-    private int apt;
+    private int apartment;
 
-    public Adress(String city, String street, int build, int apt){
+    public Adress(String city, String street, int build, int apartment){
         this.city = city;
         this.street = street;
         this.build = build;
-        this.apt = apt;
+        this.apartment = apartment;
     }
 
     public String getCity(){
@@ -43,12 +43,12 @@ public class Adress implements Serializable {
         this.build = build;
     }
 
-    public int getApt(){
-        return apt;
+    public int getApartment(){
+        return apartment;
     }
 
-    public void setApt(int apt){
-        this.apt = apt;
+    public void setApartment(int apt){
+        this.apartment = apt;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class Adress implements Serializable {
         return "Adress {\n\tcity:" + city +
                 "\n\tstreet:" + street +
                 "\n\tbuild:" + Integer.toString(build) +
-                "\n\tapt:" + Integer.toString(apt) +
+                "\n\tapt:" + Integer.toString(apartment) +
                 "\n}";
     }
 
@@ -74,13 +74,14 @@ public class Adress implements Serializable {
         return  city.equals(((Adress)that).city) &&
                 street.equals(((Adress)that).street) &&
                 build == ((Adress)that).build &&
-                apt == ((Adress)that).apt;
+                apartment == ((Adress)that).apartment;
     }
 
     @Override
     public int hashCode() {
-        return (apt + street.hashCode() ) * build;
+        return (apartment + street.hashCode() ) * build;
     }
+
 }
 
 

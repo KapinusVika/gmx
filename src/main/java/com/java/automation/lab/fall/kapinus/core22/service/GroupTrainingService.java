@@ -3,6 +3,7 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.GroupTraining;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class GroupTrainingService extends BaseService {
             GROUP_TRAINING_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
 
-    public static GroupTraining createGroupTraining(GroupTraining groupTraining){
+    public static GroupTraining createGroupTraining(GroupTraining groupTraining) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return GROUP_TRAINING_DAO.create(groupTraining);
     }
 
@@ -24,7 +25,7 @@ public class GroupTrainingService extends BaseService {
         return GROUP_TRAINING_DAO.get();
     }
 
-    public static GroupTraining update(GroupTraining groupTraining){
+    public static GroupTraining update(GroupTraining groupTraining) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return GROUP_TRAINING_DAO.update(groupTraining);
     }
 

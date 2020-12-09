@@ -15,20 +15,20 @@ import java.util.Objects;
 public class Client implements Serializable {
     private String name;
     private int age;
+    private Contact contact;
     private AgeGroups ageGroups;
-    private Subscription subscription;
     private NutritionProgram nutritionProgram;
     private TrainingProgram trainingProgram;
 
-    public Client(String name, int age, AgeGroups ageGroups, Subscription subscription,
+    public Client(String name, int age, Contact contact,AgeGroups ageGroups,
                   NutritionProgram nutritionProgram, TrainingProgram trainingProgram) throws AgeClientException {
         if (age < 10) {
             throw new AgeClientException();
         }
         this.name = name;
         this.age = age;
+        this.contact = contact;
         this.ageGroups = ageGroups;
-        this.subscription = subscription;
         this.nutritionProgram = nutritionProgram;
         this.trainingProgram = trainingProgram;
     }
@@ -47,6 +47,14 @@ public class Client implements Serializable {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public Contact getContact() {
+        return contact;
+    }
+
+    public void setContact(Contact contact) {
+        this.contact = contact;
     }
 
     public AgeGroups getAgeGroups() {
@@ -73,21 +81,13 @@ public class Client implements Serializable {
         this.trainingProgram = trainingProgram;
     }
 
-    public Subscription getSubscription() {
-        return subscription;
-    }
-
-    public void setSubscription(Subscription subscription) {
-        this.subscription = subscription;
-    }
-
     @Override
     public String toString() {
         return "Client{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
+                ", contact=" + contact +
                 ", ageGroups=" + ageGroups +
-                ", subscription=" + subscription +
                 ", nutritionProgram=" + nutritionProgram +
                 ", trainingProgram=" + trainingProgram +
                 '}';
@@ -99,16 +99,16 @@ public class Client implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Client client = (Client) o;
         return age == client.age &&
+                Objects.equals(contact, client.contact) &&
                 Objects.equals(name, client.name) &&
                 ageGroups == client.ageGroups &&
-                Objects.equals(subscription, client.subscription) &&
                 Objects.equals(nutritionProgram, client.nutritionProgram) &&
                 Objects.equals(trainingProgram, client.trainingProgram);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, age, ageGroups, subscription, nutritionProgram, trainingProgram);
+        return Objects.hash(name, age, ageGroups, nutritionProgram, trainingProgram);
     }
 }
 

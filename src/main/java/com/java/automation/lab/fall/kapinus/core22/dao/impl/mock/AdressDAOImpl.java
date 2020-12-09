@@ -22,7 +22,7 @@ public class AdressDAOImpl implements DAO<Adress> {
                 adress.getCity(),
                 adress.getStreet(),
                 adress.getBuild(),
-                adress.getApt()
+                adress.getApartment()
         );
     }
 
@@ -42,7 +42,7 @@ public class AdressDAOImpl implements DAO<Adress> {
                 adress.getCity(),
                 adress.getStreet(),
                 adress.getBuild(),
-                adress.getApt()
+                adress.getApartment()
         );
     }
 

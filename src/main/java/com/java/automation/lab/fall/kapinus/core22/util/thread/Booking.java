@@ -15,18 +15,18 @@ public class Booking {
         System.out.println("]");
     }
 
-    public static void main(String[] args) {
-        Booking booking = new Booking();
-        UserBook.BookingThread cl = new UserBook.BookingThread(booking, "Client 1 finished booking");
-        UserBook.BookingThread c2 = new UserBook.BookingThread(booking, "Client 2 finished booking");
-
-        try {
-            cl.b.join();
-            c2.b.join();
-            } catch (InterruptedException e) {
-                System.out.println("Interrupted");
-            }
-        }
+//    public static void main(String[] args) {
+//        Booking booking = new Booking();
+//        UserBook.BookingThread cl = new UserBook.BookingThread(booking, "Client 1 finished booking");
+//        UserBook.BookingThread c2 = new UserBook.BookingThread(booking, "Client 2 finished booking");
+//
+//        try {
+//            cl.b.join();
+//            c2.b.join();
+//            } catch (InterruptedException e) {
+//                System.out.println("Interrupted");
+//            }
+//        }
 }
 
 

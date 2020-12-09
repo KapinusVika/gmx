@@ -3,6 +3,7 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.Trainer;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class TrainerService extends BaseService{
     private static final DAO<Trainer> TRAINER_DAO =
             TRAINER_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
-    public static Trainer createTrainer(Trainer trainer) {
+    public static Trainer createTrainer(Trainer trainer) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return TRAINER_DAO.create(trainer);
     }
 
@@ -23,7 +24,7 @@ public class TrainerService extends BaseService{
         return TRAINER_DAO.get();
     }
 
-    public static Trainer update(Trainer trainer){
+    public static Trainer update(Trainer trainer) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return TRAINER_DAO.update(trainer);
     }
 

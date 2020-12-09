@@ -2,13 +2,13 @@ package com.java.automation.lab.fall.kapinus.core22.dao.impl.sql;
 
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.NutritionProgram;
-import com.java.automation.lab.fall.kapinus.core22.io.SessionFactory;
+import com.java.automation.lab.fall.kapinus.core22.config.SessionFactory;
 import org.apache.ibatis.session.SqlSession;
 
 import java.util.List;
 
 public class NutritionProgramDAOImplSql implements DAO<NutritionProgram> {
-    private final static String namespace = "n" + "nutrition_program_mapper";
+    private final static String namespace = "nutrition_program_mapper";
 
     @Override
     public NutritionProgram create(NutritionProgram o)  {

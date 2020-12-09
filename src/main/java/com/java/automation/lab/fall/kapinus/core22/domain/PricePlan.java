@@ -17,17 +17,17 @@ public class PricePlan implements Serializable{
     private Price name;
     private Discount nameDiscount;
     private int discount;
-    private DateRange validity;
+    private DateRange dateRange;
 
 
-    public PricePlan(Price name, Discount nameDiscount, int discount, DateRange validity) throws InvalidDiscountException {
+    public PricePlan(Price name, Discount nameDiscount, int discount, DateRange dateRange) throws InvalidDiscountException {
         if (discount > 100){
             throw new InvalidDiscountException();
         }
         this.name = name;
         this.nameDiscount = nameDiscount;
         this.discount = discount;
-        this.validity = validity;
+        this.dateRange = dateRange;
     }
 
     public Price getName() {
@@ -54,12 +54,12 @@ public class PricePlan implements Serializable{
         this.discount = discount;
     }
 
-    public DateRange getValidity() {
-        return validity;
+    public DateRange getDateRange() {
+        return dateRange;
     }
 
-    public void setValidity(DateRange validity) {
-        this.validity = validity;
+    public void setDateRange(DateRange dateRange) {
+        this.dateRange = dateRange;
     }
 
     @Override
@@ -67,7 +67,7 @@ public class PricePlan implements Serializable{
         return "PricePlan {\n\tname:" + name +
                 "\n\tnameDiscount:" + nameDiscount +
                 "\n\tdiscount:" + Integer.toString(discount) +
-                "\n\tvalidity:" + validity +
+                "\n\tvalidity:" + dateRange +
                 "\n}";
     }
 
@@ -85,7 +85,7 @@ public class PricePlan implements Serializable{
         return  name.equals(((PricePlan)that).name) &&
                 nameDiscount.equals(((PricePlan)that).nameDiscount) &&
                 discount == ((PricePlan)that).discount &&
-                validity.equals(((PricePlan)that).validity);
+                dateRange.equals(((PricePlan)that).dateRange);
     }
 
     @Override

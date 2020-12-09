@@ -3,6 +3,7 @@ package com.java.automation.lab.fall.kapinus.core22.service;
 import com.java.automation.lab.fall.kapinus.core22.constant.PropertyConstant;
 import com.java.automation.lab.fall.kapinus.core22.dao.daoModel.DAO;
 import com.java.automation.lab.fall.kapinus.core22.domain.PricePlan;
+import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class PricePlanService extends BaseService {
     private static final DAO<PricePlan> PRICE_PLAN_DAO =
             PRICE_PLAN_DAOS.get(PROPS.getValue(PropertyConstant.ENV_KEY));
 
-    public static PricePlan createPricePlan(PricePlan pricePlan) {
+    public static PricePlan createPricePlan(PricePlan pricePlan) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return PRICE_PLAN_DAO.create(pricePlan);
     }
 
@@ -23,7 +24,7 @@ public class PricePlanService extends BaseService {
         return PRICE_PLAN_DAO.get();
     }
 
-    public static PricePlan update(PricePlan pricePlan){
+    public static PricePlan update(PricePlan pricePlan) throws AgeClientException, InvalidDiscountException, InvalidCaloriesException, InvalidScheduleException, AgeTrainerException {
         return PRICE_PLAN_DAO.update(pricePlan);
     }
 

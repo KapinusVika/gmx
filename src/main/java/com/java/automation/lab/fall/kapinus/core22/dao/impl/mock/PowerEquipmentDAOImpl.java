@@ -19,7 +19,8 @@ public class PowerEquipmentDAOImpl implements DAO<PowerEquipment> {
     @Override
     public PowerEquipment create(PowerEquipment o) {
         return new PowerEquipment(
-                o.getDescriptionEquipment(),
+                o.getName(),
+                o.getYear(),
                 o.getWorkingMuscle(),
                 o.getMaxWorkingWeight()
         );
@@ -38,7 +39,8 @@ public class PowerEquipmentDAOImpl implements DAO<PowerEquipment> {
     @Override
     public PowerEquipment update(PowerEquipment o) {
         return new PowerEquipment(
-                o.getDescriptionEquipment(),
+                o.getName(),
+                o.getYear(),
                 o.getWorkingMuscle(),
                 o.getMaxWorkingWeight()
         );
