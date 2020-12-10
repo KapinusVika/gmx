@@ -45,11 +45,16 @@
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO
+        INSERT INTO clients (name, age, contactId, ageGroup)
+        VALUES (#{name}, #{age}, #{contactId}, #{ageGroup})
     </insert>
     <update id="update">
         UPDATE adresses
-        SET
+        SET name=#{name},
+        age=#{age},
+        contactId=#{contactId},
+        ageGroup=#{ageGroup}
+        WHERE id=#{id}
     </update>
 
     <resultMap id="client_map"
@@ -60,5 +65,6 @@
         <result property="street" column="street"/>
         <result property="build" column="build"/>
         <result property="apartment" column="apartment"/>
+        <collection property="contact" column="contactId" resultMap="contact_mapper.contact_map" />
     </resultMap>
 </mapper>

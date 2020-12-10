@@ -36,6 +36,11 @@
         INSERT INTO cardioTrainings (name, duration, trainerId, clientId)
         VALUES (#{name},  #{duration}, #{trainerId},  #{clientId});
     </insert>
+
+    <insert id="createRelatios">
+        INSERT INTO cardioTrainings_cardioEquipments (cardioTrainingId, cardioEquipmentId)
+        VALUES (#{cardioTrainingId}, #{cardioEquipmentId});
+    </insert>
     <update id="update">
         INSERT INTO cardioTrainings
         SET name=#{name},
