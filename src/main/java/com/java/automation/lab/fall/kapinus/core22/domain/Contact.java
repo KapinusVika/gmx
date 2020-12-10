@@ -9,12 +9,12 @@ import java.io.Serializable;
 @XmlType(propOrder = { "phoneNumber", "instagramAcc"})
 public class Contact implements Serializable{
     private String phoneNumber;
-    private URL instagramAcc;
+    private String instagramAcc;
 
     public Contact(){
     }
 
-    public Contact(String phoneNumber, URL instagramAcc){
+    public Contact(String phoneNumber, String instagramAcc){
         this.phoneNumber = phoneNumber;
         this.instagramAcc = instagramAcc;
     }
@@ -27,11 +27,11 @@ public class Contact implements Serializable{
         this.phoneNumber = phoneNumber;
     }
 
-    public URL getInstagramAcc(){
+    public String getInstagramAcc(){
         return instagramAcc;
     }
 
-    public void setInstagramAcc (URL instagramAcc){
+    public void setInstagramAcc (String instagramAcc){
         this.instagramAcc = instagramAcc;
     }
 

@@ -22,5 +22,19 @@
     </environments>
     <mappers>
         <mapper resource="mappers/adress_mapper"/>
+        <mapper resource="mappers/contact_mapper"/>
+        <mapper resource="mappers/cardio_equipment_mapper"/>
+        <mapper resource="mappers/cardio_training_mapper"/>
+        <mapper resource="mappers/client_mapper"/>
+        <mapper resource="mappers/date_range_mapper"/>
+        <mapper resource="mappers/nutrition_facts_mapper"/>
+        <mapper resource="mappers/nutrition_program_mapper"/>
+        <mapper resource="mappers/power_equipment_mapper"/>
+        <mapper resource="mappers/power_training_mapper"/>
+        <mapper resource="mappers/price_plan_mapper"/>
+        <mapper resource="mappers/subscription_mapper"/>
+        <mapper resource="mappers/trainer_mapper"/>
+        <mapper resource="mappers/training_mapper"/>
+        <mapper resource="mappers/training_program_mapper"/>
     </mappers>
 </configuration>

@@ -17,13 +17,13 @@
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO contacts(phoneNumber, instagram)
-        VALUES(#{phoneNumber}, #{instagram})
+        INSERT INTO contacts(phoneNumber, instagramAcc)
+        VALUES(#{phoneNumber}, #{instagramAcc})
     </insert>
     <update id="update">
         UPDATE contacts
         SET phoneNumber=#{phoneNumber},
-        instagram=#{instagram}
+        instagramAcc=#{instagramAcc}
     </update>
 
     <resultMap id="contact_map"
@@ -31,6 +31,6 @@
                autoMapping="false">
         <id property="id" column="id"/>
         <result property="phoneNumber" column="phoneNumber"/>
-        <result property="instagram" column="instagram"/>
+        <result property="instagramAcc" column="instagramAcc"/>
     </resultMap>
 </mapper>

@@ -14,6 +14,10 @@
         ON pricePlans.id=subscriptions.pricePlanId
         LEFT JOIN training
         ON trainings.id=subscriptions.trainingId
+        LEFT JOIN clients_subscriptions
+        clients_subscriptions.subscriptionsId = subscriptions.id
+        LEFT JOIN clients
+        clients.id = clients_subscriptions.clientId
         WHERE subscriptions.id=#{id}
     </select>
     <select id="get" resultMap="author_map">
@@ -27,18 +31,27 @@
         ON pricePlans.id=subscriptions.pricePlanId
         LEFT JOIN training
         ON trainings.id=subscriptions.trainingId
+        LEFT JOIN clients_subscriptions
+        clients_subscriptions.subscriptionsId = subscriptions.id
+        LEFT JOIN clients
+        clients.id = clients_subscriptions.clientId
+
     </select>
     <delete id="deleteById">
         DELETE FROM subscriptions
         WHERE subscriptions.id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO subscriptions(name)
-        VALUES(#{name})
+        INSERT INTO subscriptions(name, adressId, contactId, pricePlanId, trainingId)
+        VALUES(#{name}, #{adressId}, #{contactId}, #{pricePlanId}, #{trainingId})
     </insert>
     <update id="update">
         UPDATE subscriptions
-        SET name=#{name}
+        SET name=#{name},
+        adressId=#{adressId},
+        contactId=#{contactId},
+        pricePlanId=#{pricePlanId},
+        trainingId=#{trainingId}
         WHERE subscriptions.id=#{id}
     </update>
 
@@ -47,5 +60,9 @@
                autoMapping="false">
         <id property="id" column="id"/>
         <result property="name" column="name"/>
+        <collection property="adress" column="adressId" resultMap="adress_mapper.adress_map"/>
+        <collection property="contact" column="contactId" resultMap="contact_mapper.contact_map"/>
+        <collection property="pricePlan" column="pricePlanId" resultMap="pricePlan_mapper.pricePlan_map"/>
+        <collection property="training" column="trainingId" resultMap="training_mapper.training_map"/>
     </resultMap>
 </mapper>

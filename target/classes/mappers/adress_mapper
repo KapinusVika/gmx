@@ -18,7 +18,7 @@
     </delete>
     <insert id="create">
         INSERT INTO adresses(city, street, build, apartment)
-        VALUES(#{city}, #{street}, #{build}, #{apartment})
+        VALUES (#{city}, #{street}, #{build}, #{apartment})
     </insert>
     <update id="update">
         UPDATE adresses

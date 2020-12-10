@@ -17,8 +17,8 @@
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO cardioEquipments(name, year, maxWeight)
-        VALUES(#{name}, #{year}, #{maxWeight})
+        INSERT INTO cardioEquipments (name, year, maxWeight)
+        VALUES (#{name}, #{year}, #{maxWeight})
     </insert>
     <update id="update">
         UPDATE cardioEquipments

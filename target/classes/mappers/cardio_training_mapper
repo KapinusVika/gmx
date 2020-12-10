@@ -6,30 +6,51 @@
     <select id="getById" resultMap="cardio_training_map">
         SELECT *
         FROM cardioTrainings
+        LEFT JOIN trainer
+        ON trainers.id=cardioTrainings.trainerId
+        LEFT JOIN client
+        ON clients.id=cardioTrainings.clientId
+        LEFT JOIN cardioTrainings_cardioEquipments
+        cardioTrainings_cardioEquipments.cardioTrainingId = cardioTrainings.id
+        LEFT JOIN cardioEquipments
+        cardioEquipments.id = cardioTrainings_cardioEquipments.cardioEquipmentId
         WHERE id=#{id}
     </select>
     <select id="get" resultMap="cardio_training_map">
         SELECT *
         FROM cardioTrainings
+        LEFT JOIN trainer
+        ON trainers.id=cardioTrainings.trainerId
+        LEFT JOIN client
+        ON clients.id=cardioTrainings.clientId
+        LEFT JOIN cardioTrainings_cardioEquipments
+        cardioTrainings_cardioEquipments.cardioTrainingId = cardioTrainings.id
+        LEFT JOIN cardioEquipments
+        cardioEquipments.id = cardioTrainings_cardioEquipments.cardioEquipmentId
     </select>
     <delete id="deleteById">
         DELETE FROM cardioTrainings
         WHERE id=#{id}
     </delete>
     <insert id="create">
-
+        INSERT INTO cardioTrainings (name, duration, trainerId, clientId)
+        VALUES (#{name},  #{duration}, #{trainerId},  #{clientId});
     </insert>
     <update id="update">
-
+        INSERT INTO cardioTrainings
+        SET name=#{name},
+        duration=#{duration},
+        trainerId=#{trainerId},
+        clientId=#{clientId},
     </update>
 
     <resultMap id="cardio_training_map"
                type="com.java.automation.lab.fall.kapinus.core22.domain.CardioTraining"
                autoMapping="false">
         <id property="id" column="id"/>
-        <result property="city" column="city"/>
-        <result property="street" column="street"/>
-        <result property="build" column="build"/>
-        <result property="apartment" column="apartment"/>
+        <result property="name" column="name"/>
+        <result property="duration" column="duration"/>
+        <collection property="trainer" column="trainerId" resultMap="trainer_mapper.trainer_map"/>
+        <collection property="client" column="clientId" resultMap="client_mapper.client_map"/>
     </resultMap>
 </mapper>

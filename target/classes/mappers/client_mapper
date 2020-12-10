@@ -5,12 +5,40 @@
 <mapper namespace="client_mapper">
     <select id="getById" resultMap="client_map">
         SELECT *
-
-
+        FROM clients
+        LEFT JOIN contact
+        ON contacts.Id = clients.contactId
+        LEFT JOIN clients_subscriptions
+        clients_subscriptions.clientId = clients.id
+        LEFT JOIN subscription
+        subscriptions.id = clients_subscriptions.subscriptionId
+        LEFT JOIN clients_nutritionPrograms
+        clients_nutritionPrograms.clientId = clients.id
+        LEFT JOIN nutritionProgram
+        nutritionPrograms.id = clients_subscriptions.nutritionProgramId
+        LEFT JOIN clients_trainingPrograms
+        clients_trainingPrograms.clientId = clients.id
+        LEFT JOIN trainingProgram
+        trainingPrograms.id = clients_subscriptions.trainingProgramId
+        WHERE id=#{id}
     </select>
     <select id="get" resultMap="client_map">
         SELECT *
         FROM clients
+        LEFT JOIN contact
+        ON contacts.Id = clients.contactId
+        LEFT JOIN clients_subscriptions
+        clients_subscriptions.clientId = clients.id
+        LEFT JOIN subscription
+        subscriptions.id = clients_subscriptions.subscriptionId
+        LEFT JOIN clients_nutritionPrograms
+        clients_nutritionPrograms.clientId = clients.id
+        LEFT JOIN nutritionProgram
+        nutritionPrograms.id = clients_subscriptions.nutritionProgramId
+        LEFT JOIN clients_trainingPrograms
+        clients_trainingPrograms.clientId = clients.id
+        LEFT JOIN trainingProgram
+        trainingPrograms.id = clients_subscriptions.trainingProgramId
     </select>
     <delete id="deleteById">
         DELETE FROM clients

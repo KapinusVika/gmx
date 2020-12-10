@@ -3,8 +3,13 @@ package com.java.automation.lab.fall.kapinus.core22;
 import com.java.automation.lab.fall.kapinus.core22.domain.*;
 import com.java.automation.lab.fall.kapinus.core22.exceptions.*;
 import com.java.automation.lab.fall.kapinus.core22.service.AdressService;
+import com.java.automation.lab.fall.kapinus.core22.service.CardioEquipmentService;
+import com.java.automation.lab.fall.kapinus.core22.service.ContactService;
+import com.java.automation.lab.fall.kapinus.core22.service.DateRangeService;
 import org.apache.log4j.Logger;
 import org.junit.Test;
+
+import java.net.URL;
 
 public class test {
 
@@ -26,8 +31,25 @@ public class test {
 
 
 
-}
+    @Test
+    public void testContactCreate() throws UnableToReadException, AgeClientException, InvalidDiscountException,
+            AgeTrainerException, InvalidScheduleException, InvalidCaloriesException {
 
+        Contact rrr = new Contact("2342123", "34423r");
+        new ContactService().createContact(rrr);
+    }
+
+    @Test
+    public void testCardioEquipmentCreate() throws UnableToReadException, AgeClientException, InvalidDiscountException,
+            AgeTrainerException, InvalidScheduleException, InvalidCaloriesException {
+
+        CardioEquipment cec = new CardioEquipment("nsnd", 1990, 343.5);
+        new CardioEquipmentService().createCardioEquipment(cec);
+    }
+
+
+
+}
 
 
 

@@ -11,7 +11,7 @@ public class DateRange implements Serializable {
     private OffsetDateTime dateStart;
     private OffsetDateTime dateEnd;
 
-    public DateRange(){
+    public DateRange(int i1, int i){
     }
 
 
