@@ -20,6 +20,9 @@ public class Client implements Serializable {
     private NutritionProgram nutritionProgram;
     private TrainingProgram trainingProgram;
 
+    public Client(){
+    }
+
     public Client(String name, int age, Contact contact,AgeGroups ageGroups,
                   NutritionProgram nutritionProgram, TrainingProgram trainingProgram) throws AgeClientException {
         if (age < 10) {

@@ -11,6 +11,9 @@ public class Contact implements Serializable{
     private String phoneNumber;
     private URL instagramAcc;
 
+    public Contact(){
+    }
+
     public Contact(String phoneNumber, URL instagramAcc){
         this.phoneNumber = phoneNumber;
         this.instagramAcc = instagramAcc;

@@ -11,6 +11,9 @@ public class CardioTraining extends Training implements Serializable {
     private CardioEquipment equipment;
     private double duration;
 
+    public CardioTraining(){
+    }
+
     public CardioTraining(String name, Trainer trainer, Client client,
                           CardioEquipment equipment, double duration){
         super(name, trainer, client);

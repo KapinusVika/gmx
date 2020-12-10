@@ -12,6 +12,9 @@ public class Training implements Serializable {
     private Trainer trainer;
     private Client client;
 
+    public Training(){
+    }
+
     public Training(String name, Trainer trainer, Client client){
         this.name = name;
         this.trainer = trainer;

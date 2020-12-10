@@ -11,6 +11,9 @@ public abstract class Equipment implements Serializable {
     String name;
     private int year;
 
+    public Equipment(){
+    }
+
     public Equipment(String name, int year) {
         this.name = name;
         this.year = year;

@@ -6,6 +6,10 @@
     <select id="getById" resultMap="training_program_map">
         SELECT *
         FROM trainingPrograms
+        LEFT JOIN cardioTraining
+        ON cardioTrainings.id=trainingPrograms.cardioTrainingId
+        LEFT JOIN powerTraining
+        ON powerTrainings.id=trainingPrograms.powerTrainingId
         WHERE id=#{id}
     </select>
     <select id="get" resultMap="training_program_map">
@@ -17,20 +21,22 @@
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO
+        INSERT INTO (nameTraining)
+        VALUES(#{nameTraining})
     </insert>
     <update id="update">
         UPDATE trainingPrograms
-        SET
+        SET nameTraining=#{nameTraining}
     </update>
 
     <resultMap id="training_program_map"
                type="com.java.automation.lab.fall.kapinus.core22.domain.TrainingProgram"
                autoMapping="false">
         <id property="id" column="id"/>
-        <result property="city" column="city"/>
-        <result property="street" column="street"/>
-        <result property="build" column="build"/>
-        <result property="apartment" column="apartment"/>
+        <result property="nameTraining" column="nameTraining"/>
+        <collection property="cardioTraining" column="cardioTrainingId"
+                    resultMap="cardio_training_mapper.cardio_training_map"/>
+        <collection property="powerTraining" column="powerTrainingId"
+                    resultMap="power_training_mapper.power_training_map"/>
     </resultMap>
 </mapper>

@@ -12,6 +12,9 @@ public class Adress implements Serializable {
     private int build;
     private int apartment;
 
+    public Adress(){
+    }
+
     public Adress(String city, String street, int build, int apartment){
         this.city = city;
         this.street = street;

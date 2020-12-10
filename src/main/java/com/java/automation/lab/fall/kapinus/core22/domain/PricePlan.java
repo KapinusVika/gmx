@@ -19,6 +19,9 @@ public class PricePlan implements Serializable{
     private int discount;
     private DateRange dateRange;
 
+    public PricePlan(){
+    }
+
 
     public PricePlan(Price name, Discount nameDiscount, int discount, DateRange dateRange) throws InvalidDiscountException {
         if (discount > 100){

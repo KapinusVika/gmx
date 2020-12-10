@@ -14,6 +14,9 @@ public class Subscription implements Serializable {
     private PricePlan price;
     private Training training;
 
+    public Subscription(){
+    }
+
     public Subscription(String name, Adress adress, Contact contact, Client client,
                         PricePlan price, Training training){
         this.name = name;

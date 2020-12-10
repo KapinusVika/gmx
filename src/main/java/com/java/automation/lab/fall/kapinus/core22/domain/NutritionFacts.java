@@ -14,6 +14,9 @@ public class NutritionFacts implements Serializable{
     private double carbohydratesPerDay;
     private double fatsPerDay;
 
+    public NutritionFacts(){
+    }
+
     public NutritionFacts(double caloriesPerDay, double proteinPerDay,
                           double carbohydratesPerDay, double fatsPerDay) throws InvalidCaloriesException {
         if(caloriesPerDay < 1200){

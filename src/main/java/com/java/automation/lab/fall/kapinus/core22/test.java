@@ -14,7 +14,7 @@ public class test {
     @Test
     public void testAdressCreate() throws UnableToReadException, AgeClientException, InvalidDiscountException,
             AgeTrainerException, InvalidScheduleException, InvalidCaloriesException {
-        Adress v = new Adress("Minsk", "Marksa", 4, 5);
+        Adress v = new Adress("Minsk", "Lopatina", 2, 123);
         new AdressService().createAdress(v);
     }
 

@@ -12,6 +12,8 @@ public class TrainingProgram implements Serializable{
     private CardioTraining cardioTraining;
     private PowerTraining powerTraining;
 
+    public TrainingProgram(){
+    }
 
     public TrainingProgram(String nameTraining, CardioTraining cardioTraining, PowerTraining powerTraining){
         this.nameTraining = nameTraining;

@@ -11,6 +11,10 @@ public class DateRange implements Serializable {
     private OffsetDateTime dateStart;
     private OffsetDateTime dateEnd;
 
+    public DateRange(){
+    }
+
+
     public DateRange(OffsetDateTime dateStart, OffsetDateTime dateEnd){
         this.dateStart = dateStart;
         this.dateEnd = dateEnd;

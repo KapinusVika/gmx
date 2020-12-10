@@ -14,6 +14,9 @@ public class GroupTraining implements Serializable {
     private List<Client> clients;
     private int duration;
 
+    public GroupTraining(){
+    }
+
     public GroupTraining(String name, Trainer trainer, List<Client> clients, int duration){
         this.name = name;
         this.trainer = trainer;

@@ -13,6 +13,8 @@ public class PowerEquipment extends Equipment implements Serializable {
     private String workingMuscle;
     private double maxWorkingWeight;
 
+    public PowerEquipment(){
+    }
 
     public PowerEquipment(String name, int year, String workingMuscle,  double maxWorkingWeight){
         super(name, year);

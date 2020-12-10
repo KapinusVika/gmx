@@ -5,37 +5,32 @@
 <mapper namespace="price_plan_mapper">
     <select id="getById" resultMap="price_plan_map">
         SELECT *
-        FROM pricePlans
-        LEFT JOIN dateRange
-        ON dateRanges.id=pricePlans.dateRangeId
+        FROM adresses
         WHERE id=#{id}
     </select>
     <select id="get" resultMap="price_plan_map">
         SELECT *
-        FROM pricePlans
+        FROM adresses
     </select>
     <delete id="deleteById">
         DELETE FROM pricePlans
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO pricePlans (name, nameDiscount, discount)
-        VALUES(#{name}, #{nameDiscount}, #{discount})
+        INSERT INTO pricePlans
     </insert>
     <update id="update">
         UPDATE pricePlans
-        SET name=#{name},
-        nameDiscount=#{nameDiscount},
-        discount=#{discount},
+        SET
     </update>
 
     <resultMap id="price_plan_map"
                type="com.java.automation.lab.fall.kapinus.core22.domain.PricePlan"
                autoMapping="false">
         <id property="id" column="id"/>
-        <result property="name" column="name"/>
-        <result property="nameDiscount" column="nameDiscount"/>
-        <result property="discount" column="discount"/>
-        <collection property="dateRange" column="dateRangeId" resultMap="date_range_mapper.date_range_map"/>
+        <result property="city" column="city"/>
+        <result property="street" column="street"/>
+        <result property="build" column="build"/>
+        <result property="apartment" column="apartment"/>
     </resultMap>
 </mapper>

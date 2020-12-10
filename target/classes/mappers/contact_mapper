@@ -3,16 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="contact_mapper">
-    <select id="get" resultMap="contact_map">
+    <select id="getById" resultMap="contact_map">
         SELECT *
         FROM contacts
         WHERE id=#{id}
     </select>
-    <select id="getAll" resultMap="contact_map">
+    <select id="get" resultMap="contact_map">
         SELECT *
         FROM contacts
     </select>
-    <delete id="delete">
+    <delete id="deleteById">
         DELETE FROM contacts
         WHERE id=#{id}
     </delete>

@@ -5,9 +5,6 @@
 <mapper namespace="client_mapper">
     <select id="getById" resultMap="client_map">
         SELECT *
-        FROM clients
-
-
 
 
     </select>

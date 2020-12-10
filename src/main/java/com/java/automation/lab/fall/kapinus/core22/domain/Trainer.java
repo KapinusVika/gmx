@@ -21,6 +21,9 @@ public class Trainer implements Serializable{
     private TrainerSpecialization trainerSpecialization;
     private int [][] schedule ;
 
+    public Trainer(){
+    }
+
     public Trainer(String name, int age, TrainerSpecialization trainerSpecialization, int[][] schedule) {
         this.name = name;
         this.age = age;

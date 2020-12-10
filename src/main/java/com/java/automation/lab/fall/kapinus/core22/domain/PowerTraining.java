@@ -11,6 +11,9 @@ public class PowerTraining extends Training implements Serializable {
     private PowerEquipment equipment;
     private double workingWeight;
 
+    public PowerTraining(){
+    }
+
 
     public PowerTraining(PowerEquipment equipment, String name, Trainer trainer, Client client,
                          double workingWeight) {

@@ -6,37 +6,30 @@
     <select id="getById" resultMap="power_training_map">
         SELECT *
         FROM powerTraining
-        LEFT JOIN trainer
-        ON trainers.id=powerTrainings.trainerId
-        LEFT JOIN client
-        ON clients.id=powerTrainings.clientId
-        WHERE id=#{id}
     </select>
     <select id="get" resultMap="power_training_map">
         SELECT *
         FROM
     </select>
     <delete id="deleteById">
-        DELETE FROM powerTrainings
+        DELETE FROM powerTraining
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO powerTrainings (name, workingWeight)
-        VALUES (#{name},  #{workingWeight});
+        INSERT INTO
     </insert>
     <update id="update">
         UPDATE powerTraining
-        SET name=#{name},
-        workingWeight=#{workingWeight},
+        SET
     </update>
 
     <resultMap id="power_training_map"
                type="com.java.automation.lab.fall.kapinus.core22.domain.PowerTraining"
                autoMapping="false">
         <id property="id" column="id"/>
-        <result property="name" column="name"/>
-        <result property="workingWeight" column="workingWeight"/>
-        <collection property="trainer" column="trainerId" resultMap="trainer_mapper.trainer_map"/>
-        <collection property="client" column="clientId" resultMap="client_mapper.client_map"/>
+        <result property="city" column="city"/>
+        <result property="street" column="street"/>
+        <result property="build" column="build"/>
+        <result property="apartment" column="apartment"/>
     </resultMap>
 </mapper>

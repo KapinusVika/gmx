@@ -8,6 +8,8 @@ import com.java.automation.lab.fall.kapinus.core22.dao.impl.clas.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.mock.*;
 import com.java.automation.lab.fall.kapinus.core22.dao.impl.xml.*;
 import com.java.automation.lab.fall.kapinus.core22.domain.*;
+
+import java.util.Date;
 import java.util.Map;
 
 public class BaseService {
@@ -134,4 +136,11 @@ public class BaseService {
             "SQL", new PowerTrainingDAOImplSql()
     );
 
+    protected static final Map<String, DAO<DateRange>> DATE_RANGE_DAOS = Map.of(
+            "MOCK", new DateRangeDAOImpl(),
+            "OBJ", new DateRangeDAOImplClas(),
+            "XML", new DateRangeDAOImplXml(),
+            "JSON", new DateRangeDAOImplJson(),
+            "SQL", new DateRangeDAOImplSql()
+    );
 }

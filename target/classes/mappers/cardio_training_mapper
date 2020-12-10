@@ -2,33 +2,29 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="client_mapper">
-    <select id="getById" resultMap="client_map">
+<mapper namespace="cardio_training_mapper">
+    <select id="getById" resultMap="cardio_training_map">
         SELECT *
-        FROM clients
-
-
-
-
+        FROM cardioTrainings
+        WHERE id=#{id}
     </select>
-    <select id="get" resultMap="client_map">
+    <select id="get" resultMap="cardio_training_map">
         SELECT *
-        FROM clients
+        FROM cardioTrainings
     </select>
     <delete id="deleteById">
-        DELETE FROM clients
+        DELETE FROM cardioTrainings
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO
+
     </insert>
     <update id="update">
-        UPDATE adresses
-        SET
+
     </update>
 
-    <resultMap id="client_map"
-               type="com.java.automation.lab.fall.kapinus.core22.domain.Client"
+    <resultMap id="cardio_training_map"
+               type="com.java.automation.lab.fall.kapinus.core22.domain.CardioTraining"
                autoMapping="false">
         <id property="id" column="id"/>
         <result property="city" column="city"/>

@@ -12,6 +12,9 @@ public class NutritionProgram implements Serializable{
     private NutritionFacts nutritionFacts;
     private String excludedProducts;
 
+    public NutritionProgram(){
+    }
+
     public NutritionProgram(String nameDiet, NutritionFacts nutritionFacts, String excludedProducts){
         this.nameDiet = nameDiet;
         this.nutritionFacts = nutritionFacts;

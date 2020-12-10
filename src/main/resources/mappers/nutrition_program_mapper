@@ -5,7 +5,9 @@
 <mapper namespace="nutrition_program_mapper">
     <select id="getById" resultMap="nutrition_program_map">
         SELECT *
-
+        FROM nutritionPrograms
+        LEFT JOIN nutritionFacts
+        ON nutritionFacts.Id = nutritionPrograms.nutritionFactsId
     </select>
     <select id="get" resultMap="nutrition_program_map">
         SELECT *
@@ -16,20 +18,22 @@
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO
+        INSERT INTO nutritionPrograms (nameDiet, excludedProducts)
+        VALUES (#{nameDiet}, #{excludedProducts})
     </insert>
     <update id="update">
-        UPDATE adresses
-        SET
+        UPDATE nutritionPrograms
+        SET nameDiet=#{nameDiet},
+        excludedProducts=#{excludedProducts},
     </update>
 
     <resultMap id="nutrition_program_map"
                type="com.java.automation.lab.fall.kapinus.core22.domain.NutritionProgram"
                autoMapping="false">
         <id property="id" column="id"/>
-        <result property="city" column="city"/>
-        <result property="street" column="street"/>
-        <result property="build" column="build"/>
-        <result property="apartment" column="apartment"/>
+        <result property="nameDiet" column="nameDiet"/>
+        <result property="excludedProducts" column="excludedProducts"/>
+        <collection property="nutritionFacts" column="nutritionFactsId"
+                    resultMap="nutrition_facts_mapper.nutrition_facts_map"/>
     </resultMap>
 </mapper>
