@@ -13,20 +13,23 @@
     <select id="get" resultMap="price_plan_map">
         SELECT *
         FROM pricePlans
+        LEFT JOIN dateRange
+        ON dateRanges.id=pricePlans.dateRangeId
     </select>
     <delete id="deleteById">
         DELETE FROM pricePlans
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO pricePlans (name, nameDiscount, discount)
-        VALUES(#{name}, #{nameDiscount}, #{discount})
+        INSERT INTO pricePlans (name, nameDiscount, discount, dateRangeId)
+        VALUES(#{name}, #{nameDiscount}, #{discount}, #{dateRangeId})
     </insert>
     <update id="update">
         UPDATE pricePlans
         SET name=#{name},
         nameDiscount=#{nameDiscount},
         discount=#{discount},
+        dateRangeId=#{dateRangeId}
     </update>
 
     <resultMap id="price_plan_map"

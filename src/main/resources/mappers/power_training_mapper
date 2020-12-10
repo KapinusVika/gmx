@@ -5,29 +5,43 @@
 <mapper namespace="power_training_mapper">
     <select id="getById" resultMap="power_training_map">
         SELECT *
-        FROM powerTraining
+        FROM powerTrainings
         LEFT JOIN trainer
         ON trainers.id=powerTrainings.trainerId
         LEFT JOIN client
         ON clients.id=powerTrainings.clientId
+        LEFT JOIN powerTrainings_powerEquipments
+        powerTrainings_powerEquipments.powerTrainingId = powerTrainings.id
+        LEFT JOIN powerEquipment
+        powerEquipments.id = powerTrainings_powerEquipments.powerEquipmentId
         WHERE id=#{id}
     </select>
     <select id="get" resultMap="power_training_map">
         SELECT *
-        FROM
+        FROM powerTrainings
+        LEFT JOIN trainer
+        ON trainers.id=powerTrainings.trainerId
+        LEFT JOIN client
+        ON clients.id=powerTrainings.clientId
+        LEFT JOIN powerTrainings_powerEquipments
+        powerTrainings_powerEquipments.powerTrainingId = powerTrainings.id
+        LEFT JOIN powerEquipment
+        powerEquipments.id = powerTrainings_powerEquipments.powerEquipmentId
     </select>
     <delete id="deleteById">
         DELETE FROM powerTrainings
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO powerTrainings (name, workingWeight)
-        VALUES (#{name},  #{workingWeight});
+        INSERT INTO powerTrainings (name, workingWeight, trainerId, clientId)
+        VALUES (#{name},  #{workingWeight}, #{trainerId},  #{clientId});
     </insert>
     <update id="update">
         UPDATE powerTraining
         SET name=#{name},
         workingWeight=#{workingWeight},
+        trainerId=#{trainerId},
+        clientId=#{clientId}
     </update>
 
     <resultMap id="power_training_map"

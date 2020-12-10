@@ -10,24 +10,38 @@
         ON trainers.id=cardioTrainings.trainerId
         LEFT JOIN client
         ON clients.id=cardioTrainings.clientId
+        LEFT JOIN cardioTrainings_cardioEquipments
+        cardioTrainings_cardioEquipments.cardioTrainingId = cardioTrainings.id
+        LEFT JOIN cardioEquipments
+        cardioEquipments.id = cardioTrainings_cardioEquipments.cardioEquipmentId
         WHERE id=#{id}
     </select>
     <select id="get" resultMap="cardio_training_map">
         SELECT *
         FROM cardioTrainings
+        LEFT JOIN trainer
+        ON trainers.id=cardioTrainings.trainerId
+        LEFT JOIN client
+        ON clients.id=cardioTrainings.clientId
+        LEFT JOIN cardioTrainings_cardioEquipments
+        cardioTrainings_cardioEquipments.cardioTrainingId = cardioTrainings.id
+        LEFT JOIN cardioEquipments
+        cardioEquipments.id = cardioTrainings_cardioEquipments.cardioEquipmentId
     </select>
     <delete id="deleteById">
         DELETE FROM cardioTrainings
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO cardioTrainings (name, duration)
-        VALUES (#{name},  #{duration});
+        INSERT INTO cardioTrainings (name, duration, trainerId, clientId)
+        VALUES (#{name},  #{duration}, #{trainerId},  #{clientId});
     </insert>
     <update id="update">
         INSERT INTO cardioTrainings
         SET name=#{name},
         duration=#{duration},
+        trainerId=#{trainerId},
+        clientId=#{clientId},
     </update>
 
     <resultMap id="cardio_training_map"

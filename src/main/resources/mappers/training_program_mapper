@@ -15,18 +15,24 @@
     <select id="get" resultMap="training_program_map">
         SELECT *
         FROM trainingPrograms
+        LEFT JOIN cardioTraining
+        ON cardioTrainings.id=trainingPrograms.cardioTrainingId
+        LEFT JOIN powerTraining
+        ON powerTrainings.id=trainingPrograms.powerTrainingId
     </select>
     <delete id="deleteById">
         DELETE FROM trainingPrograms
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO (nameTraining)
-        VALUES(#{nameTraining})
+        INSERT INTO (nameTraining, cardioTrainingId, powerTrainingId )
+        VALUES(#{nameTraining}, #{cardioTrainingId}, #{powerTrainingId})
     </insert>
     <update id="update">
         UPDATE trainingPrograms
-        SET nameTraining=#{nameTraining}
+        SET nameTraining=#{nameTraining},
+        cardioTrainingId=#{cardioTrainingId},
+        powerTrainingId=#{powerTrainingId}
     </update>
 
     <resultMap id="training_program_map"

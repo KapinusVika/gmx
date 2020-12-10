@@ -12,19 +12,22 @@
     <select id="get" resultMap="nutrition_program_map">
         SELECT *
         FROM nutritionPrograms
+        LEFT JOIN nutritionFacts
+        ON nutritionFacts.Id = nutritionPrograms.nutritionFactsId
     </select>
     <delete id="deleteById">
         DELETE FROM nutritionPrograms
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO nutritionPrograms (nameDiet, excludedProducts)
-        VALUES (#{nameDiet}, #{excludedProducts})
+        INSERT INTO nutritionPrograms (nameDiet, excludedProducts, nutritionFactsId)
+        VALUES (#{nameDiet}, #{excludedProducts}, #{nutritionFactsId})
     </insert>
     <update id="update">
         UPDATE nutritionPrograms
         SET nameDiet=#{nameDiet},
         excludedProducts=#{excludedProducts},
+        nutritionFactsId=#{nutritionFactsId}
     </update>
 
     <resultMap id="nutrition_program_map"

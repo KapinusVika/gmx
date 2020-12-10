@@ -15,19 +15,25 @@
     <select id="get" resultMap="training_map">
         SELECT *
         FROM trainings
+        LEFT JOIN trainer
+        ON trainers.id=trainings.trainerId
+        LEFT JOIN client
+        ON clients.id=trainings.clientId
     </select>
     <delete id="deleteById">
         DELETE FROM trainings
         WHERE id=#{id}
     </delete>
     <insert id="create">
-        INSERT INTO trainings (name)
-        VALUES (#{name});
+        INSERT INTO trainings (name, trainerId, clientId)
+        VALUES (#{name}, #{trainerId}, #{clientId});
 
     </insert>
     <update id="update">
         UPDATE trainings
-        SET name=#{name}
+        SET name=#{name},
+        trainerId=#{trainerId},
+        clientId=#{clientId}
         WHERE id=#{id}
     </update>
 
